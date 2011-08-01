@@ -13,8 +13,8 @@ componentconstructors['settings'] = function(dynmap, configuration) {
 function addSettingsPanel(name, properties)
 {
 	var id = 'settings-' + name.toLowerCase().replace(/[^a-z0-9]/g, '-');
-	var panel = $('.sidebar .panel');
-	panel.append('<fieldset id="' + id + '"></fieldset>');
+	var lastChild = $('.sidebar .panel > fieldset:last');
+	lastChild.before('<fieldset id="' + id + '"></fieldset>');
 	var fieldset = $('#' + id);
 	fieldset.append('<legend>' + name + '</legend>');
 	
